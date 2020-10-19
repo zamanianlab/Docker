@@ -12,6 +12,7 @@ dependencies:
   - bwa=0.7.17
   - hisat2=2.2.1
   - stringtie=2.1.2
+  - star=2.7.6a
   - fastqc=0.11.9
   - multiQC=1.9
   - fastp=0.20.1
@@ -28,6 +29,8 @@ dependencies:
   - muscle=3.8.1551
   - seqtk=1.3
   - raxml=8.2.12
+  - htseq=0.12.4
+  - mirdeep2=2.0.1.2
 
   # - r=3.6.0
   # - r-tidyverse=1.2.1
