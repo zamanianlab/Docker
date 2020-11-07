@@ -22,5 +22,5 @@ dependencies:
   - muscle=3.8.1551
   - seqtk=1.3
   - raxml=8.2.12
-  - hhsuite=3.2.0
   - iqtree=2.0.3
+#  - hhsuite=3.2.0
