@@ -1,0 +1,17 @@
+name: chtc-imgproc
+
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - r
+
+dependencies:
+  - python=3.8.5
+  - numpy=1.19.4
+  - scipy=1.5.3
+  - imageio=2.9.0
+  - scikit-image=0.17.2
+  - opencv=4.5.0
+  - pillow=8.0.1
+  - pathlib=1.0.1
