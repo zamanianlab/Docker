@@ -2,7 +2,11 @@ FROM continuumio/miniconda3
 MAINTAINER mzamanian@wisc.edu
 
 # install (nf tracing)
-RUN apt-get update && apt-get install -y procps
+RUN apt-get update
+RUN apt-get install -y 'procps' \
+    'ffmpeg'\
+    'libsm6'\
+    'libxext6'  -y
 
 # install conda packages
 COPY conda_env.yml .
