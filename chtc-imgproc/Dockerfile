@@ -8,6 +8,11 @@ RUN apt-get install -y 'procps' \
     'libsm6'\
     'libxext6'  -y
 
+#install dev version of scikit-image
+git clone https://github.com/scikit-image/scikit-image.git
+cd scikit-image
+pip install -e .
+
 # install conda packages
 COPY conda_env.yml .
 RUN \
