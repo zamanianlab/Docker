@@ -23,8 +23,26 @@ RUN \
 
 ENV PATH="/install/hh-suite/build/bin:/install/hh-suite/build/scripts:$PATH"
 
-#install hmmtop
+#install tmhmm2
 COPY /install/TH2.tar.gz .
 RUN \
 	mv TH2.tar.gz install && cd install \
-&& tar -xzvf TH2.tar.gz \
+&& tar -xzvf TH2.tar.gz && rm TH2.tar.gz
+
+ENV PATH="/install/tmhmm-2.0c/bin:$PATH"
+
+#install signalp5
+COPY /install/SP5.tar.gz .
+RUN \
+  mv SP5.tar.gz install && cd install \
+&& tar -xzvf SP5.tar.gz && rm SP5.tar.gz
+
+ENV PATH="/install/signalp-5.0b/bin:$PATH"
+
+#install hmmtop
+COPY /install/HT21.tar.gz .
+RUN \
+  mv HT21.tar.gz install && cd install \
+&& tar -xzvf HT21.tar.gz && rm HT21.tar.gz
+
+ENV PATH="/install/hmmtop_2.1:$PATH"
