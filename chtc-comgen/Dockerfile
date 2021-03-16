@@ -11,13 +11,20 @@ RUN \
    conda env update -n root -f conda_env.yml \
 && conda clean -a
 
-# compile hhsuite
-RUN git clone https://github.com/soedinglab/hh-suite.git
-RUN	mkdir hh-suite/build && cd /hh-suite/build && \
-   cmake -DCMAKE_INSTALL_PREFIX=. .. && \
-   make -j 4 && make install
-ENV PATH="/hh-suite/build/bin:/hh-suite/build/scripts:$PATH"
+# create install directory to compile and install additional programs
+RUN mkdir install
 
-# install TMHMM
-RUN wget
-RUN tar -xzvf
+# install hhsuite
+RUN \
+	cd install && git clone https://github.com/soedinglab/hh-suite.git \
+&& mkdir hh-suite/build && cd /install/hh-suite/build \
+&& cmake -DCMAKE_INSTALL_PREFIX=. .. \
+&& make -j 4 && make install
+
+ENV PATH="/install/hh-suite/build/bin:/install/hh-suite/build/scripts:$PATH"
+
+#install hmmtop
+COPY /install/TH2.tar.gz .
+RUN \
+	mv TH2.tar.gz install && cd install \
+&& tar -xzvf TH2.tar.gz \
