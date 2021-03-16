@@ -43,6 +43,7 @@ ENV PATH="/install/signalp-5.0b/bin:$PATH"
 COPY /install/HT21.tar.gz .
 RUN \
   mv HT21.tar.gz install && cd install \
-&& tar -xzvf HT21.tar.gz && rm HT21.tar.gz
+&& tar -xzvf HT21.tar.gz && rm HT21.tar.gz \
+&& cd hmmtop_2.1 && cc hmmtop.c -lm -o hmmtop
 
 ENV PATH="/install/hmmtop_2.1:$PATH"
