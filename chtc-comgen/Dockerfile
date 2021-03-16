@@ -17,3 +17,7 @@ RUN	mkdir hh-suite/build && cd /hh-suite/build && \
    cmake -DCMAKE_INSTALL_PREFIX=. .. && \
    make -j 4 && make install
 ENV PATH="/hh-suite/build/bin:/hh-suite/build/scripts:$PATH"
+
+# install TMHMM
+RUN wget
+RUN tar -xzvf
