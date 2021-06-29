@@ -14,8 +14,7 @@ RUN \
    conda env update -n root -f conda_env.yml \
 && conda clean -a
 
-RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
-RUN export PATH=$PATH:/home/ubuntu/.local/bin
-
-# install dev version of scikit-image
-RUN pip install -i https://pypi.anaconda.org/scipy-wheels-nightly/simple scikit-image
+# install guppy
+RUN wget -O guppy-4.5.2.tar.gz "https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu_4.5.2_linux64.tar.gz"
+RUN tar -xzvf guppy-4.5.2.tar.gz
+ENV PATH=/ont-guppy-cpu/bin:$PATH

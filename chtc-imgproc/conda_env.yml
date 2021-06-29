@@ -17,7 +17,7 @@ dependencies:
   - networkx=2.5
   - numpy=1.19.4
   - opencv=4.5.0
-  - openjdk
+  - openjdk=8
   - pandas=1.1.3
   - pathlib=1.0.1
   - pillow=8.0.1
