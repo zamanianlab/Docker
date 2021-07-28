@@ -15,7 +15,7 @@ RUN \
 && conda clean -a
 
 # update nextflow
-RUN nextflow self-update
+# RUN nextflow self-update
 
 # install guppy
 RUN wget -O guppy-4.5.2.tar.gz "https://mirror.oxfordnanoportal.com/software/analysis/ont-guppy-cpu_4.5.2_linux64.tar.gz"
