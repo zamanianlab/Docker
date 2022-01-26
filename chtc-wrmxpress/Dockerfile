@@ -16,6 +16,3 @@ RUN \
 
 RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 RUN export PATH=$PATH:/home/ubuntu/.local/bin
-
-# install dev version of scikit-image
-RUN pip install -i https://pypi.anaconda.org/scipy-wheels-nightly/simple scikit-image
