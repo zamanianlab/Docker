@@ -1,0 +1,24 @@
+name: chtc-dnavc
+
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+  - python=3.8.5
+  - nextflow=20.07.1
+  - bwa=0.7.17
+  - gatk4=4.2.5.0
+  - fastqc=0.11.9
+  - multiQC=1.9
+  - fastp=0.20.1
+  - bedtools=2.29.2
+  - bedops=2.4.39
+  - sambamba=0.7.0
+  - samtools=1.9
+  - picard=2.20.6
+  - bcftools=1.9
+  - snpeff=4.3.1t
+  - seqtk=1.3
+  - htseq=0.12.4
