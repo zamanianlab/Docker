@@ -1,0 +1,29 @@
+name: chtc-phylo
+
+channels:
+  - bioconda
+  - conda-forge
+  #- defaults
+  - r
+
+dependencies:
+  - python
+  - biopython
+  - nextflow
+  # - nextflow=20.07.1
+  - r
+  - r-tidyverse
+  - blast
+  - hmmer
+  - seqtk
+  - mafft
+  - muscle
+  - trimal
+  - mrbayes
+  - raxml
+  - iqtree
+
+
+
+
+
