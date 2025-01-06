@@ -26,4 +26,4 @@ ARG CACHEBUST=1
 RUN echo ${CACHEBUST} && cd /root/ && git clone --branch v2.0 https://github.com/zamanianlab/wrmXpress.git
 
 # The code to run when container is started:
-ENTRYPOINT ["/usr/local/bin/_entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/_entrypoint.sh","/bin/bash", "-c", "while true; do sleep 30; done"]
