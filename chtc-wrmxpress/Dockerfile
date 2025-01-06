@@ -9,9 +9,6 @@ RUN apt update && apt install -y --no-install-recommends \
     openjdk-11-jdk-headless && \
     rm -r /var/lib/apt/lists/*
 
-# install wxPython from wheel (pip tries to build wheel, which takes forever)
-# RUN pip install https://extras.wxpython.org/wxPython4/extras/linux/gtk3/ubuntu-20.04/wxPython-4.2.1-cp39-cp39-linux_x86_64.whl
-
 # copy the environment.yml file to the container
 COPY --chown=$MAMBA_USER:$MAMBA_USER conda_env.yml /tmp/env.yml
 
@@ -26,7 +23,7 @@ ARG MAMBA_DOCKERFILE_ACTIVATE=1
 
 # clone wrmxpress
 ARG CACHEBUST=1
-RUN echo ${CACHEBUST} && git clone --branch v2dev https://github.com/zamanianlab/wrmXpress.git
+RUN echo ${CACHEBUST} && git clone --branch v2.0 https://github.com/zamanianlab/wrmXpress.git
 
 # The code to run when container is started:
 ENTRYPOINT ["/usr/local/bin/_entrypoint.sh"]
