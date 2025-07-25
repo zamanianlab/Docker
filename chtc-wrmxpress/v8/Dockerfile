@@ -16,7 +16,7 @@ RUN export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 RUN export PATH=$PATH:/home/ubuntu/.local/bin
 
 # Clone wrmXpress into root folder
-RUN git clone https://github.com/zamanianlab/wrmXpress.git /root/wrmXpress
+RUN git clone https://github.com/zamanianlab/wrmXpress.git /opt/wrmXpress
 
 # Activate env by default in container
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
