@@ -17,6 +17,7 @@ RUN export PATH=$PATH:/home/ubuntu/.local/bin
 
 # Clone wrmXpress into root folder
 RUN git clone https://github.com/zamanianlab/wrmXpress.git /opt/wrmXpress
+ENV PATH="/opt/wrmXpress:$PATH"
 
 # Activate env by default in container
 SHELL ["conda", "run", "-n", "base", "/bin/bash", "-c"]
