@@ -1,0 +1,60 @@
+name: base
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  # Python
+  - python=3.9
+  
+  # Core Scientific Computing
+  # Used directly by wrmXpress AND required by CellProfiler/Cellpose
+  - numpy>=1.20.1,<1.25.0      # Used in: diagnostics, optical_flow, segmentation, tracking, image_processing
+  - pandas==2.2.2              # Used in: optical_flow, segmentation (CSV handling)
+  - scipy==1.9.0               # Used in: optical_flow, segmentation (filters, ndimage)
+  - matplotlib>=3.1.3          # Used in: tracking (plotting trajectories)
+  
+  # Image Processing
+  # Used directly by wrmXpress
+  - conda-forge::opencv==4.6.0 # Used in: diagnostics, optical_flow, segmentation, image_processing (cv2)
+  - scikit-image==0.18.3       # Used in: segmentation (filters, measure, io)
+  - pillow==9.2.0              # Used in: diagnostics, optical_flow, image_processing (PIL)
+  - imageio                    # Used in: tracking (reading image sequences)
+  
+  # Machine Learning & Tracking
+  - trackpy==0.6.4             # Used in: tracking (particle/worm tracking)
+  - scikit-learn>=0.20,<1      # Dependency of: CellProfiler (machine learning tasks)
+  
+  # Configuration & Data Handling
+  - pyyaml==6.0.1              # Used in: image_processing, utilities (YAML config parsing)
+  - yaml==0.2.5                # YAML library support
+  - h5py>=3.6.0,<4             # Dependency of: CellProfiler (HDF5 file format support)
+  - pyarrow==9.0.0             # Data format support (Apache Arrow for pandas/data handling)
+  - pyzmq~=22.3                # Dependency of: CellProfiler (ZeroMQ messaging library)
+  - plotly==5.22.0             # Visualization library
+  - pydantic==2.8.2            # Data validation library
+  
+  # CellProfiler Specific Dependencies
+  - wxPython>=4.1.0,<5         # Dependency of: CellProfiler (GUI framework)
+  - bioconda::prokaryote==2.4.4    # Dependency of: CellProfiler (image analysis tools)
+  - bioconda::centrosome==1.2.3    # Dependency of: CellProfiler (centrosome detection)
+  - openjdk=8.0.302            # Dependency of: CellProfiler (Java runtime)
+  
+  # Video Processing
+  - ffmpeg==4.4.2              # Used by: wrmXpress for AVI/video processing and conversion
+  
+  # R Language & Packages
+  # Used for metadata processing and CSV generation
+  - r-base==4.2.2              # R runtime for Rscripts
+  - r-stringr==1.5.1           # R package: string manipulation
+  - r-dplyr==1.1.4             # R package: data manipulation
+  - r-tidyr==1.3.1             # R package: data tidying
+  - r-purrr==1.0.2             # R package: functional programming
+  - r-readr==2.1.5             # R package: reading CSV files
+  
+  # Pip and Pip-Installed Packages
+  - pip
+  - pip:
+    - cellprofiler==4.2.8      # Main: CellProfiler for fluorescence measurement and worm straightening
+    - cellpose==3.0.9          # Main: Cellpose for segmentation and mask creation
+    - ultralytics              # Main: YOLOv8 for object detection and segmentation
